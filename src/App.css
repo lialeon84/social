@@ -1,38 +1,173 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#container-inside {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 0 auto;
+    overflow: visible;
+}
+
+.sign-in-page {
+    /* height: 100vh;
+    background: var(--bs-primary);
+    background: rgba(var(--bs-primary-rgb), .8); */
+    background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), .8) 0, var(--bs-primary) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="rgba(var(--bs-primary-rgb), .8)", endColorstr="var(--bs-primary)", GradientType=1);
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    /* padding: 0 auto; */
+}
+
+#circle-small {
+    animation: circle-small-scale 3s ease-in-out infinite alternate;
+    animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+    animation-delay: 0s;
+    position: absolute;
+    top: 12.5rem;
+    left: -9.375rem;
+    background: #fff;
+    width: 18.75rem;
+    height: 18.75rem;
+    border-radius: 50rem;
+    opacity: .4;
+}
+
+#circle-medium {
+    animation: circle-small-scale 3s ease-in-out infinite alternate;
+    animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+    animation-delay: .3s;
+    position: absolute;
+    top: 3.125rem;
+    left: -18.75rem;
+    background: #fff;
+    width: 37.5rem;
+    height: 37.5rem;
+    border-radius: 50rem;
+    opacity: .3;
+}
+
+#circle-large {
+    animation: circle-small-scale 3s ease-in-out infinite alternate;
+    animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+    animation-delay: .6s;
+    position: absolute;
+    top: -6.25rem;
+    left: -28.125rem;
+    background: #fff;
+    width: 56.25rem;
+    height: 56.25rem;
+    border-radius: 50rem;
+    opacity: .2;
+}
+
+#circle-xlarge {
+    animation: circle-small-scale 3s ease-in-out infinite alternate;
+    animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+    animation-delay: .9s;
+    position: absolute;
+    top: -15.625rem;
+    left: -37.5rem;
+    background: #fff;
+    width: 75rem;
+    height: 75rem;
+    border-radius: 50rem;
+    opacity: .1;
+}
+
+#circle-xxlarge {
+    animation: circle-small-scale 3s ease-in-out infinite alternate;
+    animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+    animation-delay: 1.2s;
+    position: absolute;
+    top: -25rem;
+    left: -46.875rem;
+    background: #fff;
+    width: 93.75rem;
+    height: 93.75rem;
+    border-radius: 50rem;
+    opacity: .05;
+}
+
+.bg-white {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity))!important;
+}
+
+.sign-in-from {
+    padding: 0 3.75rem;
+}
+
+.mt-4 {
+    margin-top: 1.5rem!important;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    margin-bottom: 0.5rem;
+}
+
+label {
+    display: inline-block;
+}
+
+.mb-0 {
+    margin-bottom: 0!important;
+}
+
+.pb-5 {
+    padding-bottom: 2rem!important;
+}
+
+.pt-5 {
+    padding-top: 2rem!important;
 }
