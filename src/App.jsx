@@ -16,7 +16,7 @@ function App() {
             <Route path="/register" element={<Register />}/>
             <Route exact path="/reset" element={<Reset />} />
             <Route path="/feed" element={<Feed />}/>
-            {/* <Route path='*' element={<Error />}/> */}
+            <Route path='*' element={<Error />}/>
             </Routes>
     )
 }
