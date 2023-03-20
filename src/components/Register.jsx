@@ -53,8 +53,8 @@ import db from '../firebase';
         if(user){
           event.preventDefault();
             alert("Account has been created");
-            console.log("Hello", user);
-            navigate("/Login");
+            //console.log("Hello", user.email);
+            navigate("/");
             
             // setEmail('');
             // setPassword('');
@@ -65,9 +65,9 @@ import db from '../firebase';
       catch(error) {
         const errorCode = error.code;
         
-        console.log("hi", errorCode)
+        console.log("Register", errorCode)
        
-        alert(errorCode);
+        alert("Try again later");
        
       };
     }

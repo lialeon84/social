@@ -1,10 +1,12 @@
 import React from 'react'
-import Navig from './Nav'
+import Navig from './Nav';
 //import { collection, addDoc } from "firebase/firestore";
-function Feed() {
+
+   function Feed() {
+      
   return (
     <>
-    <Navig />
+    <Navig/>
     <div id="content-page" className="content-page">
 <div className="container">
    <div className="row">
@@ -191,7 +193,14 @@ function Feed() {
                         <div className="w-100">
                            <div className="d-flex justify-content-between">
                               <div className="">
-                                 <h5 className="mb-0 d-inline-block">Anna Sthesia</h5>
+                              
+                         
+                                   
+                                 <h5 className="mb-0 d-inline-block">
+                                   
+                                    
+
+                                    </h5>
                                  <span className="mb-0 d-inline-block">Add New Post</span>
                                  <p className="mb-0 text-primary">Just Now</p>
                               </div>

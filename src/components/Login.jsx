@@ -3,7 +3,7 @@ import { getAuth, signInWithEmailAndPassword, } from "firebase/auth";
 import  auth  from '../firebase';
 
 import {useState} from 'react';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function Login() {
@@ -13,37 +13,33 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
-  
-    const signIn = event => {
-        event.preventDefault();
+
+   const handleSubmit = (e) => {
+      e.preventDefault();
+      
+      
       signInWithEmailAndPassword(auths, email, password)
         .then((userCredential) => {
           // Signed in 
+          
           var user = userCredential.user;
           alert("You're logged in");
           if(user !== ""){
-            console.log(user.uid)
-            //firebase.database().ref('users').child(user)
-            navigate("/Feed");
            
+            console.log(user.email)
+            //firebase.database().ref('users').child(user)
+            navigate('/feed');
+            //navigate('/profile');
             setEmail('');
             setPassword('');
-           console.log(userCredential)
-        }
-          
-          
+           //console.log(email)
+          }
         })
-        .catch((error) => {
-          const errorCode = error.code;
-         
-          console.log("hi", errorCode)
-          alert(errorCode);
-          //const errorMessage = error.message;
+        .catch(error => {
+          console.log(error);
         });
-       
-    }
+    };
 
-       
         return(
             <>
             {/* <div>
@@ -74,20 +70,12 @@ function Login() {
       </div> */}
      
       <div className="wrapper">
-        {/* <div className='sign-in-page'>
-      <div id="container-inside">
-            <div id="circle-small"></div>
-            <div id="circle-medium"></div>
-            <div id="circle-large"></div>
-            <div id="circle-xlarge"></div>
-            <div id="circle-xxlarge"></div>
-        </div>
-        </div> */}
+      
         <div className="container p-0">
             <div className="row no-gutters">
                 <div className="col-md-6 text-center pt-5">
                     <div className="sign-in-detail text-white">
-                        <a className="sign-in-logo mb-5" href="/#"><img src="../assets/images/logo-full.png" className="img-fluid" alt="logo" loading="lazy"/></a>
+                        {/* <a className="sign-in-logo mb-5" href="/#"><img src="" className="img-fluid" alt="logo" loading="lazy"/></a> */}
                         <div className="sign-slider overflow-hidden swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
                            
                         <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
@@ -97,7 +85,7 @@ function Login() {
                     <div className="sign-in-from">
                         <h1 className="mb-0">Sign in</h1>
                         <p>Enter your email address and password to access admin panel.</p>
-                        <form className="mt-4" onSubmit={signIn}>
+                        <form className="mt-4" onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <label className="form-label">Email address</label>
                                 <input className="form-control mb-0" id="exampleInputEmail1" placeholder="Enter email"
