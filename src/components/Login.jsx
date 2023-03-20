@@ -26,13 +26,13 @@ function Login() {
           alert("You're logged in");
           if(user !== ""){
            
-            console.log(user.email)
-            //firebase.database().ref('users').child(user)
+           // console.log(user.email)
+           
             navigate('/feed');
-            //navigate('/profile');
+            
             setEmail('');
             setPassword('');
-           //console.log(email)
+          
           }
         })
         .catch(error => {
@@ -42,33 +42,7 @@ function Login() {
 
         return(
             <>
-            {/* <div>
-                <h1>Please Log In</h1>
-            <form onSubmit={signIn}>
-            <input
-              id="email"
-              name="Email"
-              type="email"
-              onChange={event => setEmail(event.target.value)}
-              value={email}
-            />
-            <input
-              id="pw"
-              name="Password"
-              type="password"
-              value={password}
-              onChange={event => setPassword(event.target.value)}
-            />
-    
-            <button type="submit">Log In</button>
-          </form>
-         
-          </div>
           
-     <div>
-       <Link to="./create">Create Account</Link>
-      </div> */}
-     
       <div className="wrapper">
       
         <div className="container p-0">
